@@ -16,8 +16,8 @@ List{%endblock%} {% block content %}
             <p><strong>Customer:</strong> {{ order.user.username }}</p>
             <p><strong>Order Date:</strong> {{ order.date }}</p>
             <p>
-              <strong>Status:</strong> {% if order.status %} Delivered {% else
-              %} Pending {% endif %}
+              <strong>Status:</strong> {% if order.status %} Delivered 
+              {% else %} Pending {% endif %}
             </p>
             <p>
               <strong>Delivery Crew:</strong> {{ order.delivery_crew.username }}

@@ -58,8 +58,9 @@ urlpatterns = [
     path('edit_booking/<int:booking_id>/', views.edit_booking, name='edit_booking'),
     path('delete_booking/<int:booking_id>/', views.delete_booking, name='delete_booking'),
     path('mark_booking_done/<int:booking_id>/', views.mark_booking_done, name='mark_booking_done'),
+    path('submit-review/', views.submit_review, name='submit_review'),
     
     path('', include(router.urls)),
 
     # Add more patterns as needed
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

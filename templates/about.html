@@ -1,34 +1,39 @@
-{% extends 'base.html' %} {% load static %} {% block title %}About - Little
-Lemon{% endblock %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}About - Foodies &
+Flavorso{% endblock %} {% block content %}
 <section class="about-section">
   <div class="about-content">
-    <h1 class="about-heading">Little Lemon</h1>
-    <h2 class="about-tagline">Savor the Taste of Tradition</h2>
+    <h1 class="about-heading">Foodies & Flavorso</h1>
+    <h2 class="about-tagline">A Fusion of Culinary Excellence</h2>
     <p>
-      Little Lemon is a family-owned restaurant that brings together the best of
-      Italian, Greek, and Turkish cuisines. Our mission is to create memorable
-      dining experiences by using fresh ingredients and authentic recipes.
+      Foodies & Flavorso is a family-owned restaurant that brings a perfect
+      blend of flavors from various cuisines. Our menu is inspired by global
+      culinary traditions, from mouthwatering Italian classics to bold and rich
+      Mediterranean dishes. Our mission is to deliver exceptional dining
+      experiences with the finest ingredients and innovative recipes.
     </p>
     <div class="about-team">
-      <h3>Meet Our Team</h3>
+      <h3>Our Commitment to Sustainability</h3>
       <p>
-        Our chefs are passionate about bringing you authentic flavors and
-        unforgettable dining experiences.
+        At our restaurant, we are dedicated to reducing our environmental
+        footprint by sourcing locally grown ingredients, minimizing waste, and
+        supporting sustainable practices. We believe in making a positive impact
+        on the planet while delivering exceptional meals to our guests.
       </p>
     </div>
     <div class="about-testimonials">
       <h3>What Our Customers Say</h3>
       <blockquote>
-        "The best dining experience! The flavors are unforgettable." - Happy
-        Customer
+        "Every dish at Foodies & Flavorso is a masterpiece. The fusion of
+        flavors and the attention to detail make it my favorite restaurant." - A
+        Satisfied Customer
       </blockquote>
     </div>
     <a href="{% url 'book_table' %}" class="cta-button">Make a Reservation</a>
   </div>
   <div class="about-image">
     <img
-      src="{% static 'img/restaurant food.jpg' %}"
-      alt="Little Lemon Restaurant"
+      src="{% static 'img/wall.jpg' %}"
+      alt="Foodies & Flavorso Restaurant"
       class="about-img"
     />
   </div>

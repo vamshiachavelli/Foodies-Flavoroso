@@ -97,3 +97,10 @@ class OrderItem(models.Model):
     def __str__(self):
         return f"{self.quantity} x {self.menuitem} @ {self.price} each"
 
+class Review(models.Model):
+    name = models.CharField(max_length=100)
+    rating = models.PositiveIntegerField(choices=[(1, '1 Star'), (2, '2 Stars'), (3, '3 Stars'), (4, '4 Stars'), (5, '5 Stars')])
+    comment = models.TextField()
+
+    def __str__(self):
+        return f'{self.name} ({self.rating} Stars)'

@@ -6,17 +6,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}Little Lemon{% endblock %}</title>
+    <title>{% block title %}Foodies & Flavorso{% endblock %}</title>
     <link
       rel="shortcut icon"
       type="image/png"
-      href="{% static 'img/favicon.ico' %}"
+      href="{% static 'img/ff_white.png' %}"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    {% load static %}<link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
+  <div class="page-container">
   <body>
     <header>
-      <img src="{% static 'img/logo.png' %}" alt="Little Lemon Logo" />
+      <img src="{% static 'img/foodies.png' %}" alt="Little Lemon Logo" />
       <nav>
         <div class="nav-container">
           <ul class="nav-left">
@@ -71,7 +73,7 @@
         </div>
       </nav>
     </header>
-
+    
     <main>
       {% block content %}
       <!-- Default content goes here -->
@@ -81,8 +83,8 @@
     <footer>
       <div class="footer-container">
         <div class="footer-left">
-          <img src="{% static 'img/logo.png' %}" alt="Company Logo">
-          <p>&copy; 2024 LittleLemon. All Rights Reserved.</p>
+          <img src="{% static 'img/foodies.png' %}" alt="Company Logo">
+          <p>&copy; 2025 FoodiesFlavoroso. All Rights Reserved.</p>
           <ul>
             <li><a href="/about">About Us</a></li>
             <li><a href="/">Contact</a></li>
@@ -106,7 +108,7 @@
         <div class="footer-right">
           <h4>Contact Us</h4>
           <p>123 Business St, City, Country</p>
-          <p>Email: littlelemon@Lemon.com</p>
+          <p>Email: foodies&flavoroso@foodies.com</p>
           <p>Phone: +123 456 7890</p>
         </div>
       </div>
@@ -115,6 +117,6 @@
         <p>Site Designed by </p>
       </div>
     </footer>
-    
+  </div>
   </body>
 </html>

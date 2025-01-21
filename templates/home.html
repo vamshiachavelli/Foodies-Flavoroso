@@ -1,47 +1,134 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Welcome to Little
-Lemon{% endblock %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}Welcome to Foodies
+& Flavouroso{% endblock %} {% block content %}
 <section>
   <article id="hero">
-    <h1 class="heading_shadow">SPECIAL OFFER</h1>
-    <p>30% Off This Weekend</p>
-    <a href="{% url 'book_table' %}" class="cta">Book now</a>
+    <h1 class="heading_shadow">Experience the Best Rooftop Dining</h1>
+    <p>Foodies & Flavours – Where Ambience Meets Taste</p>
+    <a href="{% url 'book_table' %}" class="cta">Book Your Table</a>
   </article>
 </section>
 
 <section>
   <article>
-    <h2>Our New Menu</h2>
-    <img src="{% static 'img/grill.jpg' %}" alt="Grill Dish" />
+    <h2>Our Special Menu</h2>
+    <img src="{% static 'img/chicken-Biryani.jpg' %}" alt="Menu Variety" />
     <p>
-      Our menu consists of 12-15 seasonal items based on Italian, Greek, and
-      Turkish culture.
+      From North Indian to South Indian delicacies, Foodies & Flavours offers a
+      wide range of authentic dishes, made fresh by our top star chefs.
     </p>
     <p>
-      <a href="{% url 'menu' %}">See our new menu</a>
-    </p>
-  </article>
-  <article>
-    <h2>Book a table</h2>
-    <img src="{% static 'img/salad.jpg' %}" alt="Salad Dish" />
-    <p>
-      Reserve your table for an Italian, Greek, and Turkish dining experience.
+      Enjoy everything from biryanis, naans, and momos to mocktails, milkshakes,
+      starters, and desserts – all served with a special twist.
     </p>
     <p>
-      <a href="{% url 'book_table' %}">Book your table now</a>
+      <a href="{% url 'menu' %}">Explore Our Full Menu</a>
     </p>
   </article>
   <article>
-    <h2>Opening Hours</h2>
-    <img src="{% static 'img/head_chef.jpg' %}" alt="Head Chef" />
+    <h2>Perfect for Parties</h2>
+    <img src="{% static 'img/Birthday_dec.jpg' %}" alt="Rooftop Party" />
     <p>
-      The Little Lemon Restaurant is open 7 days a week, except for public
-      holidays.
+      Celebrate your special events at our rooftop restaurant! With a stunning
+      view and ample space, we accommodate 100+ guests for parties, corporate
+      events, and more.
+    </p>
+    <p>
+      Whether it’s a birthday, anniversary, or any grand event, our rooftop is
+      the perfect venue for unforgettable memories.
+    </p>
+    <p>
+      <a href="{% url 'book_table' %}">Book Your Event</a>
+    </p>
+  </article>
+  <article>
+    <h2>Our Timings</h2>
+    <img src="{% static 'img/wall.jpg' %}" alt="Restaurant Ambience" />
+    <p>
+      Our restaurant is open every day, offering fresh food and a delightful
+      experience from morning till late night.
     </p>
     <ul>
-      <li>Mon - Fri: 2pm - 10pm</li>
-      <li>Sat: 2pm - 11pm</li>
-      <li>Sun: 2pm - 9pm</li>
+      <li>Mon - Sun: 8am - 2am</li>
     </ul>
+    <p>
+      Whether you’re craving breakfast, lunch, or late-night snacks, Foodies &
+      Flavours has you covered.
+    </p>
   </article>
 </section>
+
+<section>
+  <article>
+    <h2>Drinks & Mocktails</h2>
+    <div class="mocktails-gallery">
+      <img src="{% static 'img/drin.jpg' %}" alt="Mocktails and Drinks" />
+      <img src="{% static 'img/mocktails.jpeg' %}" alt="Mocktails and Drinks" />
+      <img src="{% static 'img/cocktails.jpeg' %}" alt="Mocktails and Drinks" />
+    </div>
+    <p>
+      Treat yourself to refreshing drinks and mocktails crafted by our expert
+      mixologists, perfect to accompany your meals or enjoy as standalone
+      refreshments.
+    </p>
+    <p>
+      From fruity mocktails to milkshakes and fresh juices, we have a wide
+      selection of beverages for every taste.
+    </p>
+  </article>
+</section>
+
+<!-- Review Section -->
+<section>
+  <article>
+    <h2>Our Reviews</h2>
+    <div id="reviews">
+      {% for review in reviews %}
+      <div class="review">
+        <p><strong>{{ review.name }}</strong></p>
+        <p>
+          Rating: {% for star in "★★★★★" %} {% if forloop.counter <= review.rating %} ⭐ {% else %} ✨ {% endif %} {% endfor %}
+        </p>
+        <p>{{ review.comment }}</p>
+      </div>
+      {% empty %}
+      <p>No reviews yet. Be the first to share your experience!</p>
+      {% endfor %}
+    </div>
+  </article>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const reviewsContainer = document.querySelector('.reviews-container');
+  const reviews = document.querySelectorAll('.review');
+  let currentIndex = 0;
+  const totalReviews = reviews.length;
+  const reviewsPerPage = 3; // How many reviews to show at a time
+
+  // Initially display the first 3 reviews
+  function showReviews() {
+    const start = currentIndex * reviewsPerPage;
+    const end = start + reviewsPerPage;
+    
+    reviews.forEach((review, index) => {
+      if (index >= start && index < end) {
+        review.style.display = "block";
+      } else {
+        review.style.display = "none";
+      }
+    });
+  }
+
+  // Move to the next set of reviews
+  function rotateReviews() {
+    currentIndex = (currentIndex + 1) % Math.ceil(totalReviews / reviewsPerPage);
+    showReviews();
+  }
+
+  // Call `rotateReviews` every 5 seconds
+  setInterval(rotateReviews, 5000);
+
+  // Initially show reviews
+  showReviews();
+});
+</script>
 {% endblock %}
