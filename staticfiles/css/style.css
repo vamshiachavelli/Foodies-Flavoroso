@@ -1,26 +1,38 @@
 body {
   font-family: 'Karla', sans-serif;
-  background: url('/capstone-project/static/img/wall.webp') no-repeat center center fixed;
-  background-size: cover;
   margin-top: 3rem;
   margin-bottom: 3rem;
   margin-left: 5%;
   margin-right: 5%;
+  background-image: url('/static/img/wall.jpg');
+  background-size: cover;
+  /* Ensure the image covers the entire page */
+  background-position: center center;
+  /* Center the background image */
+  background-repeat: no-repeat;
+  /* Prevent the image from repeating */
 }
 
-/* Transparent overlay for readability */
-.overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  color: #fff;
+.page-container {
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
+  backdrop-filter: blur(10px);
+  /* Apply blur effect to everything */
+  background: rgba(255, 255, 255, 0.2);
+  /* Semi-transparent white background */
+  border-radius: 10px;
+  /* Rounded corners */
   padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for depth */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Markazi Text', serif;
   letter-spacing: 2px;
 }
@@ -37,12 +49,13 @@ h2 {
   margin: 1rem 0;
 }
 
-p, ul {
+p,
+ul {
   font-size: 1.25rem;
 }
 
 a {
-  color: #EE9972;
+  color: #444444;
   text-decoration: none;
 }
 
@@ -62,7 +75,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #495E57;
+  background-color: #333333;
   padding: 10px 20px;
   margin-top: 1rem;
 }
@@ -74,23 +87,31 @@ nav {
   align-items: center;
 }
 
-.nav-left, .nav-center, .nav-right {
+.nav-left,
+.nav-center,
+.nav-right {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.nav-left li, .nav-center li, .nav-right li {
+.nav-left li,
+.nav-center li,
+.nav-right li {
   margin: 0 15px;
 }
 
-.nav-left a, .nav-center a, .nav-right a {
+.nav-left a,
+.nav-center a,
+.nav-right a {
   color: white;
   text-decoration: none;
 }
 
-.nav-left a:hover, .nav-center a:hover, .nav-right a:hover {
+.nav-left a:hover,
+.nav-center a:hover,
+.nav-right a:hover {
   text-decoration: underline;
 }
 
@@ -107,8 +128,22 @@ article {
 }
 
 article img {
-  max-width: 100%;
+  width: 350px;
+  /* Uniform width for all images */
+  height: 200px;
+  /* Uniform height for all images */
+  object-fit: cover;
+  /* Ensures images fit within dimensions without distortion */
+  display: block;
+  /* Prevents inline-block spacing issues */
+  margin: 10px auto;
+  /* Centers the images and adds spacing */
+  border-radius: 8px;
+  /* Optional: Rounded corners for style */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds shadow for better visibility */
 }
+
 
 article ul {
   list-style: none;
@@ -150,7 +185,7 @@ input {
 }
 
 #hero {
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('../img/restaurant_inside.jpg');
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('../img/wall.jpg');
   background-size: cover;
   background-position: 75%;
   color: white;
@@ -180,8 +215,8 @@ input {
 
 .cta:hover {
   color: #fff;
-  background: #495E57;
-  border: 3px solid #495E57;
+  background: #333333;
+  border: 3px solid #333333;
 }
 
 .heading-shadow {
@@ -189,44 +224,53 @@ input {
 }
 
 footer {
-  background-color: #EDEFEE;
   padding: 1rem;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left,
+.footer-center,
+.footer-right {
   flex: 1;
   min-width: 250px;
   max-width: 350px;
   padding: 10px;
 }
 
-.footer-left img, .footer-center img, .footer-right img {
+.footer-left img,
+.footer-center img,
+.footer-right img {
   max-width: 100%;
 }
 
-.footer-left p, .footer-center p, .footer-right p {
+.footer-left p,
+.footer-center p,
+.footer-right p {
   font-size: 14px;
 }
 
-.footer-left ul, .footer-center .social-media {
+.footer-left ul,
+.footer-center .social-media {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-left ul li, .footer-center .social-media li {
+.footer-left ul li,
+.footer-center .social-media li {
   margin-bottom: 10px;
 }
 
-.footer-left ul li a, .footer-center .social-media li a {
+.footer-left ul li a,
+.footer-center .social-media li a {
   color: #333;
   text-decoration: none;
 }
 
-.footer-left ul li a:hover, .footer-center .social-media li a:hover {
+.footer-left ul li a:hover,
+.footer-center .social-media li a:hover {
   color: #4A90E2;
 }
 
@@ -245,7 +289,6 @@ footer {
 
 .footer-center button {
   background-color: #4A90E2;
-  color: #fff;
   padding: 8px 15px;
   border: none;
   border-radius: 4px;
@@ -279,7 +322,9 @@ footer {
     gap: 30px;
   }
 
-  .footer-left, .footer-center, .footer-right {
+  .footer-left,
+  .footer-center,
+  .footer-right {
     max-width: 100%;
     margin-bottom: 20px;
   }
@@ -300,13 +345,34 @@ footer {
   }
 }
 
+/* Styling for the mocktails-gallery images */
+.mocktails-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.mocktails-gallery img {
+  width: 30%;
+  /* Each image takes up 30% of the container width */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mocktails-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
 /* ========================================*/
 /* Foorter */
 /* ========================================*/
 
 /* Footer Styling */
 footer {
-  background-color: #EDEFEE;
   padding: 40px 20px;
   color: #333;
   font-size: 14px;
@@ -320,7 +386,9 @@ footer {
   margin-bottom: 20px;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left,
+.footer-center,
+.footer-right {
   flex: 1;
   min-width: 250px;
   max-width: 350px;
@@ -427,7 +495,8 @@ footer {
   text-align: right;
 }
 
-.footer-right h4, a{
+.footer-right h4,
+a {
   font-size: 18px;
   color: #4A90E2;
   margin-bottom: 15px;
@@ -461,7 +530,9 @@ footer {
     align-items: center;
   }
 
-  .footer-left, .footer-center, .footer-right {
+  .footer-left,
+  .footer-center,
+  .footer-right {
     max-width: 100%;
     margin-bottom: 20px;
     text-align: center;
@@ -482,55 +553,146 @@ footer {
 }
 
 /* ========================================*/
+/* Reviews */
+/* ========================================*/
+
+/* Container to hold reviews */
+#reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  /* Space between the boxes */
+  justify-content: space-between;
+  /* Distribute reviews evenly */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Style for individual review box */
+.review {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: calc(33% - 10px);
+  /* Each box takes up 1/3 of the container */
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Add hover effect to the review box */
+.review:hover {
+  transform: translateY(-5px);
+  /* Slight lift effect */
+}
+
+/* Review text styling */
+.review strong {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.review p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.review .rating {
+  font-size: 18px;
+  color: gold;
+}
+
+/* Pagination styles */
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination a {
+  padding: 5px;
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.pagination .current {
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* ========================================*/
 /* About */
 /* ========================================*/
 /* about */
 .about-section {
-  display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Space between content and image */
-  padding: 2rem; /* Padding around the section */
-  border: 2px solid #EDEFEE; /* Border around the entire section */
-  border-radius: 10px; /* Rounded corners */
-  background-color: #ffffff; /* Background color */
+  display: flex;
+  /* Flexbox for layout */
+  justify-content: space-between;
+  /* Space between content and image */
+  padding: 2rem;
+  /* Padding around the section */
+  border: 2px solid #EDEFEE;
+  /* Border around the entire section */
+  border-radius: 10px;
+  /* Rounded corners */
 }
 
 .about-content {
-  flex: 0 0 35%; /* Fixed width for content */
-  margin-right: 2rem; /* Space between content and image */
+  flex: 0 0 35%;
+  /* Fixed width for content */
+  margin-right: 2rem;
+  /* Space between content and image */
 }
 
 .about-heading {
-  font-size: 3rem; /* Large heading size */
-  margin-bottom: 0rem; /* Space below heading */
+  font-size: 2rem;
+  /* Large heading size */
+  margin-bottom: 0rem;
+  /* Space below heading */
   margin-top: 0rem;
 }
 
 .about-tagline {
-  font-size: 1.5rem; /* Tagline size */
-  margin: 0; /* Space above and below the tagline */
-  padding-left: 5rem; /* Space from the border */
-  font-style: italic; /* Italicize the tagline */
-  display: inline-block; /* Make it inline to attach to heading */
+  font-size: 1.5rem;
+  /* Tagline size */
+  margin: 0;
+  /* Space above and below the tagline */
+  padding-left: 5rem;
+  /* Space from the border */
+  font-style: italic;
+  /* Italicize the tagline */
+  display: inline-block;
+  /* Make it inline to attach to heading */
 
 }
 
 .about-team,
 .about-testimonials {
-  margin-top: .5rem; /* Space above team and testimonials */
+  margin-top: .5rem;
+  /* Space above team and testimonials */
 }
 
 .about-team h3,
 .about-testimonials h3 {
-  font-size: 1.5rem; /* Size for section headings */
-  margin-bottom: 0rem; /* Space below section heading */
+  font-size: 1.5rem;
+  /* Size for section headings */
+  margin-bottom: 0rem;
+  /* Space below section heading */
 }
 
 .about-testimonials blockquote {
-  font-style: italic; /* Italicize the testimonial */
-  margin: 1rem 0; /* Space around the testimonial */
-  border-left: 3px solid #EE9972; /* Stylish left border */
-  padding-left: 1rem; /* Space from the border */
+  font-style: italic;
+  /* Italicize the testimonial */
+  margin: 1rem 0;
+  /* Space around the testimonial */
+  border-left: 3px solid #EE9972;
+  /* Stylish left border */
+  padding-left: 1rem;
+  /* Space from the border */
 }
+
 /* Style for the image area */
 .about-image {
   flex: 1;
@@ -541,24 +703,36 @@ footer {
 }
 
 .about-img {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Rounded corners */
+  max-width: 100%;
+  /* Responsive image */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 10px;
+  /* Rounded corners */
 }
 
 .cta-button {
-  display: inline-block; /* Make button a block */
-  margin-top: 1.5rem; /* Space above button */
-  padding: 0.5rem 1rem; /* Padding inside button */
-  background-color: #EE9972; /* Button color */
-  color: #fff; /* Text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Rounded corners for button */
-  font-size: 1.25rem; /* Button text size */
+  display: inline-block;
+  /* Make button a block */
+  margin-top: 1.5rem;
+  /* Space above button */
+  padding: 0.5rem 1rem;
+  /* Padding inside button */
+  background-color: #333333;
+  /* Button color */
+  color: #fff;
+  /* Text color */
+  text-decoration: none;
+  /* Remove underline */
+  border-radius: 5px;
+  /* Rounded corners for button */
+  font-size: 1.25rem;
+  /* Button text size */
 }
 
 .cta-button:hover {
-  background-color: #495E57; /* Darken button on hover */
+  background-color: #444444;
+  /* Darken button on hover */
 }
 
 /* ========================================*/
@@ -568,133 +742,195 @@ footer {
 
 
 .menu-section {
-  min-width: 300px; /* Set a minimum width for responsive design */
-  margin: 1rem 0; /* Spacing between sections */
-  padding: 1rem; /* Add padding around the section */
-  border: 1px solid #EDEFEE; /* Border around the section */
-  border-radius: 10px; /* Rounded corners for section */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
-  background-color: #FFFFFF; /* Optional: background color for sections */
+  min-width: 300px;
+  /* Set a minimum width for responsive design */
+  margin: 1rem 0;
+  /* Spacing between sections */
+  padding: 1rem;
+  /* Add padding around the section */
+  border: 1px solid #EDEFEE;
+  /* Border around the section */
+  border-radius: 10px;
+  /* Rounded corners for section */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* Optional shadow for effect */
 }
 
 .menu-heading {
-  font-size: 4.5rem; /* Font size for the heading */
-  color: #495E57; /* Heading color */
-  margin: 2rem 0; /* Space above and below the heading */
-  text-align: center; /* Center the heading */
+  font-size: 4.5rem;
+  /* Font size for the heading */
+  color: #333333;
+  /* Heading color */
+  margin: 2rem 0;
+  /* Space above and below the heading */
+  text-align: center;
+  /* Center the heading */
 }
 
 .menu-item {
-  margin-bottom: 2rem; /* Space between different categories */
+  margin-bottom: 2rem;
+  /* Space between different categories */
   position: relative;
 }
 
 .menu-content {
-  display: flex; /* Set display to flex */
-  flex-direction: column; /* Arrange items in a column */
-  align-items: center; /* Center align the items */
-  border-radius: 10px; /* Rounded corners */
-  padding: 1rem; /* Padding around each menu content block */
-  justify-content: space-between; /* Space items evenly within the container */
-  margin-bottom: 1.5rem; /* Add gap between each dish */
+  display: flex;
+  /* Set display to flex */
+  flex-direction: column;
+  /* Arrange items in a column */
+  align-items: center;
+  /* Center align the items */
+  border-radius: 10px;
+  /* Rounded corners */
+  padding: 1rem;
+  /* Padding around each menu content block */
+  justify-content: space-between;
+  /* Space items evenly within the container */
+  margin-bottom: 1.5rem;
+  /* Add gap between each dish */
   height: 250px;
-  transition: transform 0.3s, background-color 0.3s; /* Optional: smooth scale on hover */
+  transition: transform 0.3s, background-color 0.3s;
+  /* Optional: smooth scale on hover */
 }
 
 .menu-content:hover {
-  transform: scale(1.02); /* Slightly scale up on hover */
-  border-color: #a8dadc; /* Change border color on hover (optional) */
+  transform: scale(1.02);
+  /* Slightly scale up on hover */
+  border-color: #444444;
+  /* Change border color on hover (optional) */
 }
 
 .menu-image {
-  max-width: 100%; /* Ensure responsive images */
-  max-height: 250px; /* Increase max height for images */
+  max-width: 100%;
+  /* Ensure responsive images */
+  max-height: 250px;
+  /* Increase max height for images */
   object-fit: cover;
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 10px;
+  /* Rounded corners */
 }
 
 .menu-under {
-  color: #495E57; /* Set text color */
+  color: #333333;
+  /* Set text color */
   margin-left: 2rem;
 }
 
 .menu-description {
-  font-size: 1.2rem; /* Font size for the paragraph */
-  color: #495E57; /* Text color */
-  margin: 1rem 0; /* Vertical margin for space above and below */
-  text-align: center; /* Center the paragraph */
-  line-height: 1.5; /* Increase line height for readability */
-  flex-grow: 1; /* Allow description to take up available space */
+  font-size: 1.2rem;
+  /* Font size for the paragraph */
+  color: #333333;
+  /* Text color */
+  margin: 1rem 0;
+  /* Vertical margin for space above and below */
+  text-align: center;
+  /* Center the paragraph */
+  line-height: 1.5;
+  /* Increase line height for readability */
+  flex-grow: 1;
+  /* Allow description to take up available space */
 }
 
 /* Additional spacing to ensure consistent gaps */
 .menu-content img {
-  margin-bottom: 0.5rem; /* Small gap between image and title */
+  margin-bottom: 0.5rem;
+  /* Small gap between image and title */
   max-width: 100%;
   max-height: 100%;
 }
 
 /* Assuming this is in your styles.css or relevant CSS file */
 .menu-item a {
-  text-decoration: none;  /* Removes the underline */
-  color: inherit;        /* Keeps the text color the same as surrounding text */
+  text-decoration: none;
+  /* Removes the underline */
+  color: inherit;
+  /* Keeps the text color the same as surrounding text */
 }
 
 .menu-item a:hover {
-  text-decoration: none;  /* Optional: Add underline on hover for better user experience */
+  text-decoration: none;
+  /* Optional: Add underline on hover for better user experience */
 }
 
 .cart-quantity {
   position: absolute;
   top: 5px;
   right: 5px;
-  background: green; /* Set background to green */
-  color: white; /* Set text color to white */
-  padding: 5px 10px; /* Adjust padding if necessary */
-  border-radius: 50%; /* Make it a circle */
+  background: green;
+  /* Set background to green */
+  color: white;
+  /* Set text color to white */
+  padding: 5px 10px;
+  /* Adjust padding if necessary */
+  border-radius: 50%;
+  /* Make it a circle */
   font-weight: bold;
-  width: 15px; /* Fixed width */
-  height: 20px; /* Fixed height */
-  text-align: center; /* Center text horizontally */
-  line-height: 25px; /* Vertically center the text */
+  width: 15px;
+  /* Fixed width */
+  height: 20px;
+  /* Fixed height */
+  text-align: center;
+  /* Center text horizontally */
+  line-height: 25px;
+  /* Vertically center the text */
 }
 
 
 .dish-of-the-day {
-  background-color: #ffeb3b; /* Bright yellow background for visibility */
-  border: 1px solid #fbc02d; /* A slightly darker border */
-  position: relative; /* Position relative for the label */
-  padding: .6rem; /* Padding for inner spacing */
-  margin: 1rem 0; /* Vertical spacing around the dish */
-  transition: transform 0.3s; /* Smooth scale effect on hover */
+  background-color: #ffeb3b;
+  /* Bright yellow background for visibility */
+  border: 1px solid #fbc02d;
+  /* A slightly darker border */
+  position: relative;
+  /* Position relative for the label */
+  padding: .6rem;
+  /* Padding for inner spacing */
+  margin: 1rem 0;
+  /* Vertical spacing around the dish */
+  transition: transform 0.3s;
+  /* Smooth scale effect on hover */
 }
 
 .dish-of-the-day:hover {
-  transform: scale(1.02); /* Slightly enlarge on hover */
+  transform: scale(1.02);
+  /* Slightly enlarge on hover */
 }
 
 .dish-of-the-day::before {
-  content: "Dish of the Day"; /* Label for the dish of the day */
-  position: absolute; /* Position absolutely */
-  top: -10px; /* Adjust position above the dish */
-  left: 10px; /* Align to the left */
-  background-color: #f44336; /* Red background for the label */
-  color: white; /* White text color */
-  padding: 5px; /* Padding around the label */
-  font-weight: bold; /* Bold label text */
-  border-radius: 5px; /* Rounded corners for the label */
-  font-size: 1.2rem; /* Increase font size for visibility */
+  content: "Dish of the Day";
+  /* Label for the dish of the day */
+  position: absolute;
+  /* Position absolutely */
+  top: -10px;
+  /* Adjust position above the dish */
+  left: 10px;
+  /* Align to the left */
+  background-color: #f44336;
+  /* Red background for the label */
+  color: white;
+  /* White text color */
+  padding: 5px;
+  /* Padding around the label */
+  font-weight: bold;
+  /* Bold label text */
+  border-radius: 5px;
+  /* Rounded corners for the label */
+  font-size: 1.2rem;
+  /* Increase font size for visibility */
 }
 
 .remove-delete {
-  display: flex; /* Enables Flexbox layout */
+  display: flex;
+  /* Enables Flexbox layout */
   justify-content: space-between;
-  align-items: center; /* Vertically center aligns the buttons */
+  align-items: center;
+  /* Vertically center aligns the buttons */
   padding: 10px;
 }
 
 .remove-button {
-  background-color: #dc3545; /* Bootstrap danger color */
+  background-color: #dc3545;
+  /* Bootstrap danger color */
   color: white;
   border: none;
   padding: 10px;
@@ -702,8 +938,9 @@ footer {
   cursor: pointer;
 }
 
-.delete-button{
-  background-color: #dc3545; /* Bootstrap danger color */
+.delete-button {
+  background-color: #dc3545;
+  /* Bootstrap danger color */
   color: white;
   border: none;
   padding: 10px;
@@ -712,10 +949,11 @@ footer {
 }
 
 .delete-button:hover {
-background-color: #c0392b;
+  background-color: #c0392b;
 }
+
 .remove-button:hover {
-background-color: #c0392b;
+  background-color: #c0392b;
 }
 
 .cart-controls {
@@ -725,216 +963,315 @@ background-color: #c0392b;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background-color: #f9f9f9; /* Light background for the cart controls */
+  background-color: #f9f9f9;
+  /* Light background for the cart controls */
 }
 
 .quantity-controls {
   display: flex;
   align-items: center;
-  margin-right: 10px; /* Space between quantity and button */
+  margin-right: 10px;
+  /* Space between quantity and button */
 }
 
 .add-to-cart-button {
-  padding: 10px 10px; /* Padding for button */
-  background-color: #28a745; /* Green background */
-  color: white; /* White text */
-  border: none; /* No border */
-  border-radius: 3px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth background change on hover */
+  padding: 10px 10px;
+  /* Padding for button */
+  background-color: #28a745;
+  /* Green background */
+  color: white;
+  /* White text */
+  border: none;
+  /* No border */
+  border-radius: 3px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s;
+  /* Smooth background change on hover */
 }
 
 .add-to-cart-button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: #218838;
+  /* Darker green on hover */
 }
 
 /* Container for the entire menu item detail section */
 .menu-item-detail {
-  max-width: 700px; /* Slightly narrower for a cleaner look */
-  margin: 2rem auto; /* Center the section with some space around it */
+  max-width: 700px;
+  /* Slightly narrower for a cleaner look */
+  margin: 2rem auto;
+  /* Center the section with some space around it */
   padding: 1.5rem;
-  background-color: #ffffff; /* White background */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  background-color: #ffffff;
+  /* White background */
+  border-radius: 12px;
+  /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Light shadow for depth */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align content */
-  text-align: center; /* Center text */
+  align-items: center;
+  /* Center align content */
+  text-align: center;
+  /* Center text */
   font-family: 'Verdana', sans-serif;
 }
 
 /* Item title */
 .menu-item-detail h1 {
-  font-size: 2.8rem; /* Adjusted for a balanced appearance */
-  color: #495E57; /* Muted green color */
-  margin-bottom: 1rem; /* Reduced margin for compactness */
+  font-size: 2.8rem;
+  /* Adjusted for a balanced appearance */
+  color: #495E57;
+  /* Muted green color */
+  margin-bottom: 1rem;
+  /* Reduced margin for compactness */
   font-weight: bold;
 }
 
 /* Image styling */
 .menu-item-detail img {
   width: 100%;
-  max-width: 500px; /* Limiting image width */
+  max-width: 500px;
+  /* Limiting image width */
   height: auto;
   border-radius: 10px;
-  margin-bottom: 1.5rem; /* Reduced space between image and text */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+  margin-bottom: 1.5rem;
+  /* Reduced space between image and text */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Shadow effect */
+  transition: transform 0.3s ease;
+  /* Smooth zoom effect on hover */
 }
 
 .menu-item-detail img:hover {
-  transform: scale(1.05); /* Slight zoom-in on hover */
+  transform: scale(1.05);
+  /* Slight zoom-in on hover */
 }
 
 /* Paragraph styling for the item description */
 .menu-item-detail p {
-  font-size: 1.2rem; /* Moderate font size */
-  color: #495E57; /* Text color */
-  line-height: 1.5; /* Adjusted line height for readability */
-  margin-bottom: 1rem; /* Reduced space */
+  font-size: 1.2rem;
+  /* Moderate font size */
+  color: #495E57;
+  /* Text color */
+  line-height: 1.5;
+  /* Adjusted line height for readability */
+  margin-bottom: 1rem;
+  /* Reduced space */
 }
 
 .menu-item-detail p strong {
-  font-weight: bold; /* Bold labels */
-  color: #333; /* Dark color for emphasis */
+  font-weight: bold;
+  /* Bold labels */
+  color: #333;
+  /* Dark color for emphasis */
 }
 
-.price, .inventory {
-  font-size: 1.4rem; /* Larger font for price and quantity */
-  color: #28a745; /* Green color for price */
+.price,
+.inventory {
+  font-size: 1.4rem;
+  /* Larger font for price and quantity */
+  color: #28a745;
+  /* Green color for price */
   font-weight: 600;
-  margin-bottom: 1rem; /* Space below the price and quantity */
+  margin-bottom: 1rem;
+  /* Space below the price and quantity */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .menu-item-detail {
-    padding: 1rem; /* Less padding on small screens */
+    padding: 1rem;
+    /* Less padding on small screens */
   }
 
   .menu-item-detail h1 {
-    font-size: 2.4rem; /* Smaller title */
+    font-size: 2.4rem;
+    /* Smaller title */
   }
 
   .menu-item-detail p {
-    font-size: 1rem; /* Adjust text size */
+    font-size: 1rem;
+    /* Adjust text size */
   }
 }
 
 /* booking-wrapper */
 .booking-wrapper {
-  display: flex; /* Use flexbox for layout */
-  height: 100vh; /* Full viewport height */
+  display: flex;
+  /* Use flexbox for layout */
+  height: 100vh;
+  /* Full viewport height */
 }
 
 /* Attract Section */
 .attract {
-  flex: 0 0 35%; /* Fixed height of 35% */
-  padding: 1rem; /* Padding for breathing room */
-  background-color: #f9f9f9; /* Light background for contrast */
-  text-align: center; /* Center text */
-  border-right: 1px solid #EDEFEE; /* Border for separation */
+  flex: 0 0 35%;
+  /* Fixed height of 35% */
+  padding: 1rem;
+  /* Padding for breathing room */
+  background-color: #f9f9f9;
+  /* Light background for contrast */
+  text-align: center;
+  /* Center text */
+  border-right: 1px solid #EDEFEE;
+  /* Border for separation */
 }
 
 .attract h2 {
-  font-size: 2rem; /* Heading size for attract section */
-  margin-bottom: 1rem; /* Space below heading */
-  color: #495E57; /* Main color for heading */
+  font-size: 2rem;
+  /* Heading size for attract section */
+  margin-bottom: 1rem;
+  /* Space below heading */
+  color: #333333;
+  /* Main color for heading */
 }
 
 .attract p {
-  font-size: 1.2rem; /* Font size for attract section */
-  color: #495E57; /* Consistent text color */
+  font-size: 1.2rem;
+  /* Font size for attract section */
+  color: #333333;
+  /* Consistent text color */
 }
 
 /* Booking Section */
 .booking-section {
-  flex: 1; /* Remaining height */
-  max-width: 800px; /* Limit max width for better readability */
-  margin: 0; /* No margin */
-  padding: 2rem; /* Padding for breathing room */
-  border: 1px solid #EDEFEE; /* Light border for separation */
-  border-radius: 10px; /* Rounded corners */
-  background-color: #fdfdfd; /* Light background for contrast */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  display: flex; /* Use flexbox */
-  flex-direction: column; /* Stack children vertically */
+  flex: 1;
+  /* Remaining height */
+  max-width: 800px;
+  /* Limit max width for better readability */
+  margin: 0;
+  /* No margin */
+  padding: 2rem;
+  /* Padding for breathing room */
+  border: 1px solid #EDEFEE;
+  /* Light border for separation */
+  border-radius: 10px;
+  /* Rounded corners */
+  background-color: #fdfdfd;
+  /* Light background for contrast */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  display: flex;
+  /* Use flexbox */
+  flex-direction: column;
+  /* Stack children vertically */
 }
 
 /* Booking Section Headings and Form Styles */
 .booking-section h1 {
-  font-size: 2.5rem; /* Larger heading size */
-  margin-bottom: 1rem; /* Space below the heading */
-  text-align: center; /* Centered heading */
-  color: #495E57; /* Main color for heading */
+  font-size: 2.5rem;
+  /* Larger heading size */
+  margin-bottom: 1rem;
+  /* Space below the heading */
+  text-align: center;
+  /* Centered heading */
+  color: #333333;
+  /* Main color for heading */
 }
 
 .booking-section .booking-intro,
 .booking-section .booking-reason {
-  font-size: 1.2rem; /* Readable text size */
-  text-align: center; /* Centered paragraph */
-  margin-bottom: 1rem; /* Space below paragraphs */
+  font-size: 1.2rem;
+  /* Readable text size */
+  text-align: center;
+  /* Centered paragraph */
+  margin-bottom: 1rem;
+  /* Space below paragraphs */
 }
 
 .booking-form {
-  display: flex; /* Flexbox for alignment */
-  flex-direction: column; /* Vertical layout */
-  gap: 1rem; /* Space between inputs */
+  display: flex;
+  /* Flexbox for alignment */
+  flex-direction: column;
+  /* Vertical layout */
+  gap: 1rem;
+  /* Space between inputs */
 }
 
 /* Input Styles */
 .booking-form label {
-  font-weight: bold; /* Bold labels for emphasis */
-  color: #495E57; /* Consistent color */
+  font-weight: bold;
+  /* Bold labels for emphasis */
+  color: #333333;
+  /* Consistent color */
 }
 
 .booking-form input {
-  padding: 0.75rem; /* Padding for inputs */
-  border: 1px solid #EDEFEE; /* Light border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1rem; /* Font size for inputs */
-  transition: border-color 0.3s; /* Transition for focus effect */
+  padding: 0.75rem;
+  /* Padding for inputs */
+  border: 1px solid #EDEFEE;
+  /* Light border */
+  border-radius: 5px;
+  /* Rounded corners */
+  font-size: 1rem;
+  /* Font size for inputs */
+  transition: border-color 0.3s;
+  /* Transition for focus effect */
 }
 
 .booking-form input:focus {
-  border-color: #EE9972; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: #333333;
+  /* Change border color on focus */
+  outline: none;
+  /* Remove default outline */
 }
 
 /* Button Styles */
 .booking-form button {
-  padding: 0.75rem; /* Button padding */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #EE9972; /* Button color */
-  color: #fff; /* Button text color */
-  font-size: 1.2rem; /* Button text size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Transition for hover effect */
+  padding: 0.75rem;
+  /* Button padding */
+  border: none;
+  /* Remove border */
+  border-radius: 5px;
+  /* Rounded corners */
+  background-color: #333333;
+  /* Button color */
+  color: #fff;
+  /* Button text color */
+  font-size: 1.2rem;
+  /* Button text size */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: background-color 0.3s;
+  /* Transition for hover effect */
 }
 
 .booking-form button:hover {
-  background-color: #495E57; /* Darker shade on hover */
+  background-color: #444444;
+  /* Darker shade on hover */
 }
 
 /* Testimonials, Special Offers, and Footer Styles */
-.testimonials, .special-offers {
-  margin-top: 2rem; /* Space above sections */
-  text-align: center; /* Center text */
+.testimonials,
+.special-offers {
+  margin-top: 2rem;
+  /* Space above sections */
+  text-align: center;
+  /* Center text */
 }
 
 .testimonials blockquote {
-  font-style: italic; /* Italics for emphasis */
-  margin: 1rem 0; /* Margin for space */
-  padding: 1rem; /* Padding for blockquote */
-  border-left: 4px solid #EE9972; /* Left border for style */
-  background-color: #f9f9f9; /* Light background */
-  border-radius: 5px; /* Rounded corners */
+  font-style: italic;
+  /* Italics for emphasis */
+  margin: 1rem 0;
+  /* Margin for space */
+  padding: 1rem;
+  /* Padding for blockquote */
+  border-left: 4px solid #333333;
+  /* Left border for style */
+  background-color: #f9f9f9;
+  /* Light background */
+  border-radius: 5px;
+  /* Rounded corners */
 }
 
 .special-offers {
-  font-size: 1rem; /* Font size */
-  color: #495E57; /* Consistent text color */
+  font-size: 1rem;
+  /* Font size */
+  color: #333333;
+  /* Consistent text color */
 }
 
 /* Custom CSS for Reservation Success Page */
@@ -995,13 +1332,16 @@ background-color: #c0392b;
 
 
 .cart-section {
-  display: flex; /* Use flexbox for layout */
-  justify-content: space-between; /* Adjusts layout */
+  display: flex;
+  /* Use flexbox for layout */
+  justify-content: space-between;
+  /* Adjusts layout */
   padding: 20px;
 }
 
 .cart-content {
-  flex: 1; /* Takes available space */
+  flex: 1;
+  /* Takes available space */
 }
 
 .cart-heading {
@@ -1015,35 +1355,51 @@ background-color: #c0392b;
 }
 
 .cart-items-list {
-  list-style: none; /* Removes default list styles */
-  padding: 0; /* Removes padding */
-  margin: 0; /* Removes margin */
+  list-style: none;
+  /* Removes default list styles */
+  padding: 0;
+  /* Removes padding */
+  margin: 0;
+  /* Removes margin */
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap */
-  gap: 20px; /* Adjust the value for the desired space */
+  flex-wrap: wrap;
+  /* Allow items to wrap */
+  gap: 20px;
+  /* Adjust the value for the desired space */
 }
 
 .cart-item {
-  border: 1px solid #ddd; /* Border around items */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light background for items */
-  padding: 15px; /* Inner spacing */
-  display: flex; /* Flex for item content */
-  flex-direction: column; /* Stack elements vertically */
-  max-width: 250px; /* Limit width of items */
+  border: 1px solid #ddd;
+  /* Border around items */
+  border-radius: 5px;
+  /* Rounded corners */
+  background-color: #f9f9f9;
+  /* Light background for items */
+  padding: 15px;
+  /* Inner spacing */
+  display: flex;
+  /* Flex for item content */
+  flex-direction: column;
+  /* Stack elements vertically */
+  max-width: 250px;
+  /* Limit width of items */
 }
 
 .cart-item-details {
-  flex-grow: 1; /* Allow details to grow */
+  flex-grow: 1;
+  /* Allow details to grow */
 }
 
 .cart-total {
-  margin-top: 20px; /* Space above total cost */
-  font-weight: bold; /* Highlight the total */
+  margin-top: 20px;
+  /* Space above total cost */
+  font-weight: bold;
+  /* Highlight the total */
 }
 
 .empty-cart-message {
-  text-align: center; /* Center text for empty cart message */
+  text-align: center;
+  /* Center text for empty cart message */
 }
 
 /* Order History Page Styles */
@@ -1053,11 +1409,13 @@ background-color: #c0392b;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 40px; /* Increased padding for better spacing */
+  padding: 40px;
+  /* Increased padding for better spacing */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin: 30px 200px; /* Adding margin-top to push content away from top */
+  margin: 30px 200px;
+  /* Adding margin-top to push content away from top */
 }
 
 .order-history-page h1 {
@@ -1145,8 +1503,10 @@ background-color: #c0392b;
 .dashboard-container {
   width: 90%;
   max-width: 1200px;
-  margin: 50px auto; /* Add margin around the container */
-  padding: 40px; /* Add padding inside the container */
+  margin: 50px auto;
+  /* Add margin around the container */
+  padding: 40px;
+  /* Add padding inside the container */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1157,7 +1517,8 @@ background-color: #c0392b;
   text-align: center;
   color: #1f7f4e;
   font-size: 2rem;
-  margin-bottom: 30px; /* Increased margin for better spacing */
+  margin-bottom: 30px;
+  /* Increased margin for better spacing */
 }
 
 /* Style for the list of dashboard options */
@@ -1170,8 +1531,10 @@ background-color: #c0392b;
 /* Style for each dashboard item (menu link) */
 .dashboard-item {
   background-color: #f4f4f4;
-  margin: 15px 0; /* Adjusted margin between items */
-  padding: 20px; /* Increased padding for better spacing */
+  margin: 15px 0;
+  /* Adjusted margin between items */
+  padding: 20px;
+  /* Increased padding for better spacing */
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.3s;
@@ -1198,42 +1561,53 @@ background-color: #c0392b;
 .dashboard-container {
   width: 90%;
   max-width: 1200px;
-  margin: 50px auto; /* Added margin for spacing */
-  padding: 40px; /* Padding inside the container */
+  margin: 50px auto;
+  /* Added margin for spacing */
+  padding: 40px;
+  /* Padding inside the container */
 }
 
 .dashboard-title {
   text-align: center;
   font-size: 2rem;
   color: #333;
-  margin-bottom: 30px; /* Increased margin for spacing */
+  margin-bottom: 30px;
+  /* Increased margin for spacing */
 }
 
 /* Container for the form */
 .form-container {
   max-width: 1100px;
-  margin: 50px auto;  /* Center the form with margin */
-  padding: 20px;      /* Padding inside the container */
+  margin: 50px auto;
+  /* Center the form with margin */
+  padding: 20px;
+  /* Padding inside the container */
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;      /* Enables flexbox layout */
-  flex-direction: column;  /* Stack elements vertically */
-  gap: 30px;          /* Increased space between form sections */
+  display: flex;
+  /* Enables flexbox layout */
+  flex-direction: column;
+  /* Stack elements vertically */
+  gap: 30px;
+  /* Increased space between form sections */
 }
 
 /* Heading inside the form */
 .form-heading {
   font-size: 2em;
-  margin-bottom: 20px;  /* Space below the heading */
+  margin-bottom: 20px;
+  /* Space below the heading */
   color: #333;
   text-align: center;
 }
 
 /* Style for the submit button */
 .submit-btn {
-  width: 100%;              /* Full width of the container */
-  padding: 10px;            /* Padding inside the button */
+  width: 100%;
+  /* Full width of the container */
+  padding: 10px;
+  /* Padding inside the button */
   background-color: #4caf50;
   color: white;
   border: none;
@@ -1244,97 +1618,132 @@ background-color: #c0392b;
 }
 
 .submit-btn:hover {
-  background-color: #45a049;  /* Darker green on hover */
+  background-color: #45a049;
+  /* Darker green on hover */
 }
 
 /* Layout for the form and confirmation sections */
 .form-and-confirmation {
-  display: flex;              /* Enables flexbox layout */
-  gap: 30px;                  /* Space between form and confirmation sections */
-  margin-bottom: 20px;        /* Space below the flex container */
+  display: flex;
+  /* Enables flexbox layout */
+  gap: 30px;
+  /* Space between form and confirmation sections */
+  margin-bottom: 20px;
+  /* Space below the flex container */
 }
 
 /* Style for form section and confirmation section */
 .form-section,
 .confirmation-section {
-  flex: 1;                    /* Allow sections to grow equally */
-  border: 1px solid #EDEFEE;  /* Light border for separation */
-  border-radius: 10px;        /* Rounded corners */
-  padding: 30px;              /* Padding inside the sections */
-  background-color: #fdfdfd;  /* Light background for contrast */
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  flex: 1;
+  /* Allow sections to grow equally */
+  border: 1px solid #EDEFEE;
+  /* Light border for separation */
+  border-radius: 10px;
+  /* Rounded corners */
+  padding: 30px;
+  /* Padding inside the sections */
+  background-color: #fdfdfd;
+  /* Light background for contrast */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
 }
 
 /* Style for the confirmation section */
 .confirmation-section {
-  display: flex;              /* Flexbox for layout */
-  flex-direction: column;     /* Stack elements vertically */
-  align-items: center;        /* Center align the items */
+  display: flex;
+  /* Flexbox for layout */
+  flex-direction: column;
+  /* Stack elements vertically */
+  align-items: center;
+  /* Center align the items */
 }
 
 .dish-of-day-section {
-    display: flex;
-    justify-content: space-between; /* Adjusts layout */
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  /* Adjusts layout */
+  padding: 20px;
 }
 
 .dish-content {
-    flex: 1; /* Takes available space */
+  flex: 1;
+  /* Takes available space */
 }
 
 .dish-heading {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .dish-tagline {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .dish-items-list {
-    list-style: none; /* Removes default list styles */
-    padding: 0; /* Removes padding */
-    margin: 0; /* Removes margin */
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    gap: 20px; /* Adjust the value for the desired space */
+  list-style: none;
+  /* Removes default list styles */
+  padding: 0;
+  /* Removes padding */
+  margin: 0;
+  /* Removes margin */
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow items to wrap */
+  gap: 20px;
+  /* Adjust the value for the desired space */
 }
 
 .dish-item {
-    border: 1px solid #ddd; /* Border around items */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background for items */
-    padding: 15px; /* Inner spacing */
-    display: flex; /* Flex for item content */
-    flex-direction: column; /* Stack elements vertically */
-    max-width: 250px; /* Limit width of items */
+  border: 1px solid #ddd;
+  /* Border around items */
+  border-radius: 5px;
+  /* Rounded corners */
+  background-color: #f9f9f9;
+  /* Light background for items */
+  padding: 15px;
+  /* Inner spacing */
+  display: flex;
+  /* Flex for item content */
+  flex-direction: column;
+  /* Stack elements vertically */
+  max-width: 250px;
+  /* Limit width of items */
 }
 
 .dish-item-details {
-    flex-grow: 1; /* Allow details to grow */
+  flex-grow: 1;
+  /* Allow details to grow */
 }
 
 .dish-image {
-    max-width: 250px; /* Ensure responsive images */
-    max-height: 250px; /* Increase max height for images */
-    object-fit: cover;
-    border-radius: 10px; /* Rounded corners */
+  max-width: 250px;
+  /* Ensure responsive images */
+  max-height: 250px;
+  /* Increase max height for images */
+  object-fit: cover;
+  border-radius: 10px;
+  /* Rounded corners */
 }
 
 .dish-image img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintains aspect ratio */
+  width: 100%;
+  /* Responsive image */
+  height: auto;
+  /* Maintains aspect ratio */
 }
 
 .remove-button {
-    background-color: #dc3545; /* Bootstrap danger color */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 3px;
-    cursor: pointer;
+  background-color: #dc3545;
+  /* Bootstrap danger color */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
 }
+
 .remove-button:hover {
   background-color: #c0392b;
 }
@@ -1347,12 +1756,15 @@ background-color: #c0392b;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 40px; /* Increased padding for better spacing */
+  padding: 40px;
+  /* Increased padding for better spacing */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centering content horizontally */
-  margin: 30px 200px; /* Adding margin-top to push content away from top */
+  align-items: center;
+  /* Centering content horizontally */
+  margin: 30px 200px;
+  /* Adding margin-top to push content away from top */
 
 }
 
@@ -1361,8 +1773,10 @@ background-color: #c0392b;
   font-weight: 700;
   color: #333;
   text-align: center;
-  margin-bottom: 40px; /* Add space below the heading */
+  margin-bottom: 40px;
+  /* Add space below the heading */
 }
+
 /* Orders List */
 .orders {
   list-style-type: none;
@@ -1375,12 +1789,14 @@ background-color: #c0392b;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  border: 1px solid #ddd;  /* Border for each order item */
+  border: 1px solid #ddd;
+  /* Border for each order item */
 }
 
 .order-header {
   margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;  /* Border at the bottom of the order header */
+  border-bottom: 1px solid #ddd;
+  /* Border at the bottom of the order header */
   padding-bottom: 10px;
 }
 
@@ -1396,7 +1812,8 @@ background-color: #c0392b;
   padding: 15px;
   border-radius: 8px;
   margin-top: 20px;
-  border: 1px solid #ddd;  /* Border for the assign crew section */
+  border: 1px solid #ddd;
+  /* Border for the assign crew section */
 }
 
 .assign-crew h3 {
@@ -1420,22 +1837,23 @@ background-color: #c0392b;
   border-radius: 5px;
   width: 100%;
 }
+
 /* Crew List Styles */
 
 .order-item {
-background-color: #f9f9f9;
-margin-bottom: 20px;
-padding: 15px;
-border-radius: 5px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .order-header {
-font-size: 16px;
+  font-size: 16px;
 }
 
 .order-header p {
-margin: 5px 0;
+  margin: 5px 0;
 }
 
 .assign-crew {
@@ -1454,21 +1872,25 @@ margin: 5px 0;
   margin-bottom: 5px;
 }
 
-.assign-crew select, .assign-crew button {
+.assign-crew select,
+.assign-crew button {
   margin-bottom: 10px;
   padding: 8px;
   font-size: 14px;
 }
 
 .orders-container {
-display: flex;
-justify-content: space-between;
-gap: 30px; /* Adjusts the gap between left and right */
-margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  /* Adjusts the gap between left and right */
+  margin-top: 20px;
 }
 
-.assigned-orders, .unassigned-orders {
-  width: 48%; /* Adjust the width to control how much space each side takes */
+.assigned-orders,
+.unassigned-orders {
+  width: 48%;
+  /* Adjust the width to control how much space each side takes */
 }
 
 .order-item {
@@ -1504,7 +1926,8 @@ margin-top: 20px;
   margin-bottom: 5px;
 }
 
-.assign-crew select, .assign-crew button {
+.assign-crew select,
+.assign-crew button {
   margin-bottom: 10px;
   padding: 8px;
   font-size: 14px;
@@ -1569,11 +1992,14 @@ margin-top: 20px;
 .add-group-btn:hover {
   background-color: #45a049;
 }
+
 /* Manager Dashboard Container */
 .manage-groups-container {
   width: 100%;
-  max-width: 1000px;  /* Maximum width to prevent it from stretching too wide */
-  margin: 50px auto;  /* Center the container with some margin on top and bottom */
+  max-width: 1000px;
+  /* Maximum width to prevent it from stretching too wide */
+  margin: 50px auto;
+  /* Center the container with some margin on top and bottom */
   padding: 30px;
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -1588,8 +2014,10 @@ margin-top: 20px;
   color: #333;
   text-align: center;
   margin-bottom: 30px;
-  border-bottom: 3px solid #007bff;  /* Underline with color */
-  padding-bottom: 10px;  /* Space between heading and underline */
+  border-bottom: 3px solid #007bff;
+  /* Underline with color */
+  padding-bottom: 10px;
+  /* Space between heading and underline */
 }
 
 /* Responsive Design for Small Screens */
@@ -1661,7 +2089,8 @@ margin-top: 20px;
 .group-detail-container {
   padding: 40px;
   max-width: 600px;
-  margin: 50px auto;  /* Center the container with some margin on top and bottom */
+  margin: 50px auto;
+  /* Center the container with some margin on top and bottom */
   background-color: #f9fafc;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1693,27 +2122,33 @@ margin-top: 20px;
   outline: none;
 }
 
-.permissions-section, .users-section {
+.permissions-section,
+.users-section {
   margin-bottom: 30px;
 }
 
-.permissions-list, .users-list {
+.permissions-list,
+.users-list {
   list-style-type: none;
   padding: 0;
 }
 
-.permissions-list li, .users-list li {
+.permissions-list li,
+.users-list li {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Add smooth transition */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Add smooth transition */
 }
 
 .permissions-list li:hover {
-  background-color: #f0f8ff; /* Light blue background on hover */
-  transform: translateY(-2px); /* Slightly lift the item when hovered */
+  background-color: #f0f8ff;
+  /* Light blue background on hover */
+  transform: translateY(-2px);
+  /* Slightly lift the item when hovered */
 }
 
 .remove-link {
@@ -1728,7 +2163,8 @@ margin-top: 20px;
 
 /* Optional: If you want to add a border effect */
 .permissions-list li:hover {
-  border-left: 4px solid #3498db; /* Blue border when hovered */
+  border-left: 4px solid #3498db;
+  /* Blue border when hovered */
 }
 
 /* Container for the manager dashboard */
@@ -1756,7 +2192,8 @@ margin-top: 20px;
 /* Delivery Crew List Styles */
 .dashboard-container {
   width: 90%;
-  margin: 50px auto;  /* Center the container with some margin on top and bottom */
+  margin: 50px auto;
+  /* Center the container with some margin on top and bottom */
   max-width: 1200px;
   padding: 20px;
 }
@@ -1773,7 +2210,8 @@ margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 50px auto;  /* Center the container with some margin on top and bottom */
+  margin: 50px auto;
+  /* Center the container with some margin on top and bottom */
 }
 
 .crew-header {
@@ -1808,11 +2246,10 @@ margin-top: 20px;
 /* General Section Styling */
 .user-section {
   padding: 40px;
-  background-color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .user-content {
@@ -1869,43 +2306,47 @@ margin-top: 20px;
 
 .cta-button {
   display: inline-block;
-  background-color: #4CAF50;
+  background-color: #333333;
   color: white;
-  padding: 10px 20px;
+  padding: 3px 10px;
   margin-top: 20px;
   border-radius: 4px;
   text-align: center;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  font-size: 12px;
 }
 
 .cta-button:hover {
-  background-color: #45a049;
+  background-color: #444444;
 }
 
 /* Mobile Responsive */
 @media (max-width: 600px) {
   .user-content {
-      padding: 15px;
+    padding: 15px;
   }
 
   .user-table th,
   .user-table td {
-      padding: 10px;
+    padding: 10px;
   }
 
   .user-heading {
-      font-size: 20px;
+    font-size: 20px;
   }
 
-  .cta-button, .delete-button {
-      font-size: 12px;
-      padding: 8px 10px;
+  .cta-button,
+  .delete-button {
+    font-size: 12px;
+    padding: 8px 10px;
   }
 }
+
 /* Edit Button Styling */
 .edit-button {
-  background-color: #4CAF50; /* Green color for edit */
+  background-color: #4CAF50;
+  /* Green color for edit */
   color: white;
   border: none;
   padding: 8px 12px;
@@ -1913,11 +2354,13 @@ margin-top: 20px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  text-decoration: none; /* Remove underline if it's a link */
+  text-decoration: none;
+  /* Remove underline if it's a link */
 }
 
 .edit-button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
+  /* Darker green on hover */
 }
 
 /* Booking Management Section */
@@ -2098,12 +2541,15 @@ margin-top: 20px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 30px; /* Increased padding for better spacing */
+  padding: 30px;
+  /* Increased padding for better spacing */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centering content horizontally */
-  margin: 30px auto; /* Adding margin-top to push content away from top */
+  align-items: center;
+  /* Centering content horizontally */
+  margin: 30px auto;
+  /* Adding margin-top to push content away from top */
 }
 
 /* Title */
@@ -2117,10 +2563,14 @@ margin-top: 20px;
 
 /* Flex Container for Delivery Crew and Order Status Section */
 .order-details-wrapper .info-sections {
-  display: flex; /* Flexbox layout */
-  justify-content: space-between; /* Space between the sections */
-  width: 100%; /* Full width for the parent container */
-  gap: 20px; /* Add space between the sections */
+  display: flex;
+  /* Flexbox layout */
+  justify-content: space-between;
+  /* Space between the sections */
+  width: 100%;
+  /* Full width for the parent container */
+  gap: 20px;
+  /* Add space between the sections */
   margin-top: 30px;
 }
 
@@ -2130,7 +2580,8 @@ margin-top: 20px;
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
-  width: 100%; /* Set each section to take 48% of the width */
+  width: 100%;
+  /* Set each section to take 48% of the width */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -2192,7 +2643,8 @@ margin-top: 20px;
 }
 
 /* Subtotal and other columns centered */
-.order-items-table td:nth-child(3), .order-items-table td:nth-child(4) {
+.order-items-table td:nth-child(3),
+.order-items-table td:nth-child(4) {
   text-align: center;
   font-weight: bold;
   color: #2c3e50;
@@ -2225,7 +2677,8 @@ margin-top: 20px;
 
   .delivery-crew-section,
   .order-status-section {
-    width: 100%; /* Make sections full width on small screens */
+    width: 100%;
+    /* Make sections full width on small screens */
   }
 
   .order-items-table th,
@@ -2287,6 +2740,7 @@ margin-top: 20px;
 .assign-crew-form button:hover {
   background-color: #0056b3;
 }
+
 /* General Section Styling */
 .delete-booking-section {
   max-width: 600px;
@@ -2476,8 +2930,7 @@ margin-top: 20px;
 }
 
 
-* Update Order Status Page Styles */
-.order-status-update {
+* Update Order Status Page Styles */ .order-status-update {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -2719,11 +3172,13 @@ margin-top: 20px;
 }
 
 .order-status-update p strong:last-child {
-  color: #e74c3c; /* Red color for 'Pending' status */
+  color: #e74c3c;
+  /* Red color for 'Pending' status */
 }
 
 .order-status-update p strong:first-child {
-  color: #2ecc71; /* Green color for 'Delivered' status */
+  color: #2ecc71;
+  /* Green color for 'Delivered' status */
 }
 
 /* Responsive styling */
@@ -2743,16 +3198,21 @@ margin-top: 20px;
 }
 
 .remove {
-  background-color: #e74c3c; /* Red for Remove */
+  background-color: #e74c3c;
+  /* Red for Remove */
 }
 
 .set {
-  background-color: #27ae60; /* Green for Set */
+  background-color: #27ae60;
+  /* Green for Set */
 }
+
 .remove:hover {
-  background-color: #c0392b; /* Darker red */
+  background-color: #c0392b;
+  /* Darker red */
 }
 
 .set:hover {
-  background-color: #219653; /* Darker green */
+  background-color: #219653;
+  /* Darker green */
 }

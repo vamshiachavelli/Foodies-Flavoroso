@@ -57,19 +57,8 @@ class UserListView(generics.ListAPIView):
 #=======================================================================================================
 
 def home(request):
-    # Fetch all reviews from the database
-    reviews_list = Review.objects.all()
-
-    for review in reviews_list:
-        review.stars = ['⭐'] * review.rating
-
-    # Paginate the reviews (3 reviews per page)
-    paginator = Paginator(reviews_list, 3)  # Show 3 reviews per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-
-    # Pass the reviews to the template
-    return render(request, 'home.html', {'page_obj': page_obj})
+    reviews = Review.objects.all()
+    return render(request, 'home.html', {'reviews': reviews})
 
 def about(request):
     return render(request, 'about.html')
@@ -707,7 +696,3 @@ def submit_review(request):
         comment = request.POST['comment']
         Review.objects.create(name=name, rating=rating, comment=comment)
         return redirect('home')  # Or wherever you want to redirect
-
-def home(request):
-    reviews = Review.objects.all()
-    return render(request, 'home.html', {'reviews': reviews})
